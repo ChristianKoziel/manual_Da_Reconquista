@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual da Obsessão - Quiz 4</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .progress-bar-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: #555;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 80%; /* Atualiza a largura para 80% no quarto quiz */
+            background-color: red;
+            transition: width 0.3s;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h1 span {
+            color: red;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background-color: red;
+            color: #000;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0.5rem;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .cta-button:hover {
+            background-color: #00cc00;
+        }
+
+        img {
+            width: 150px;
+            height: auto;
+            margin: 1rem;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 1rem;
+                width: 90%;
+            }
+
+            img {
+                width: 120px;
+            }
+        }
+
+        /* Responsividade para telas muito pequenas, como celulares pequenos */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 1rem;
+                width: 90%;
+            }
+
+            img {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Impede que o usuário volte para a página anterior
+        if (window.history && window.history.pushState) {
+            window.history.pushState(null, null, window.location.href);
+            window.onpopstate = function () {
+                window.history.pushState(null, null, window.location.href);
+            };
+        }
+    </script>
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <img src="src/img/mulher na canguta do homem.png" alt="Mulher com Homem">
+    <h1>Se você pudesse usar técnicas comprovadas para despertar o desejo de um homem, como isso mudaria sua vida amorosa?</h1>
+    <p>Selecione sua resposta:</p>
+    <button class="cta-button" onclick="nextQuiz()">Mudaria completamente, me sentiria desejada e poderosa</button>
+    <button class="cta-button" onclick="nextQuiz()">Melhoraria muito. Finalmente teria a atenção que mereço</button>
+    <button class="cta-button" onclick="nextQuiz()">Faria uma grande diferença, me sentiria mais confiante nos meus relacionamentos</button>
+
+    <script>
+        let currentQuiz = 4; // Quiz atual
+        const totalQuizzes = 5; // Total de quizzes
+        const progressBar = document.getElementById("progress-bar");
+
+        function nextQuiz() {
+            if (currentQuiz < totalQuizzes) {
+                currentQuiz++;
+                const progress = (currentQuiz / totalQuizzes) * 100;
+                progressBar.style.width = progress + "%";
+                // Redireciona para o próximo quiz
+                window.location.href = 'quiz5.html';
+            } else {
+                alert("Você completou o quiz!");
+            }
+        }
+    </script>
+</body>
+</html>

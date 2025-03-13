@@ -1,0 +1,289 @@
+/* Estilos Gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #1a0000;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Header */
+/* Header */
+.header {
+  background: linear-gradient(to bottom, #800000, #ff3333, #ff6666);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+
+.header h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Seções */
+.section {
+  padding: 40px 20px;
+  background-color: #2a0000;
+  margin: 20px 0;
+  border-radius: 15px;
+}
+
+.section h2 {
+  color: #ff3333;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Destaques */
+.highlight {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+.special {
+  color: #ff6666;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.red-text {
+  color: #ff0000;
+}
+
+.white-text {
+  color: #ffffff;
+}
+
+/* Lista de Problemas */
+.problems-section {
+  background-color: #ffffff;
+  padding: 30px;
+  margin: 20px;
+  border-radius: 15px;
+}
+
+.problem-list {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.problem-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.icon {
+  color: #ff0000;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* Seção de Obsessão */
+.obsession-section {
+  background: linear-gradient(135deg, #400000, #800000);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.red-box {
+  background-color: #ff0000;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+.check-list {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.check-list li {
+  margin: 15px 0;
+  color: #ffffff;
+}
+
+/* Depoimentos */
+.testimonials-section {
+  padding: 40px 20px;
+  background-color: #2a0000;
+}
+
+.swiper-container {
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ff0000 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ff0000 !important;
+}
+
+/* Botões */
+button {
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #cc0000;
+  transform: scale(1.05);
+}
+
+/* Animação de Pulso */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .header h1 {
+      font-size: 2.5em;
+  }
+
+  .section h2 {
+      font-size: 1.8em;
+  }
+
+  .problems-section,
+  .obsession-section {
+      margin: 10px;
+      padding: 20px;
+  }
+
+  .red-box {
+      margin: 15px 0;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #1a0000;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Links */
+a {
+  color: #ff4d4d;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff6666;
+  text-decoration: underline;
+}
+/* Depoimentos */
+.testimonials-section {
+  padding: 40px 20px;
+  background-color: #2a0000;
+  text-align: center;
+}
+
+.testimonials-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.swiper-container {
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.swiper-slide img {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  display: block;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ff0000 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ff0000 !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .swiper-slide img {
+    max-width: 100%;
+  }
+}
+/* Depoimentos */
+.testimonials-section {
+  padding: 20px 10px;
+  background-color: #2a0000;
+  text-align: center;
+}
+
+.testimonials-content {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.swiper-container {
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.swiper-slide img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ff0000 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ff0000 !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 15px 5px;
+  }
+
+  .swiper-slide img {
+    max-width: 90%;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual da Obsessão - Quiz 5</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Barra de progresso */
+        .progress-bar-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: #555;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 80%; /* Atualiza a largura para 80% no quinto quiz */
+            background-color: #000000;
+            transition: width 0.3s;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h1 span {
+            color: red;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: rgb(251, 251, 251);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background-color: #00ff00;
+            color: #000;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .cta-button:hover {
+            background-color: #00cc00;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 1rem;
+                width: 90%;
+            }
+        }
+
+        /* Responsividade para telas muito pequenas, como celulares pequenos */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 1rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 1rem;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <h1>PARABÉNS, VOCÊ FOI SELECIONADA PARA TER ACESSO A ESSE <span>SEGREDO DA SEDUÇÃO</span></h1>
+    <h2>Você saberá exatamente quais passos seguir</h2>
+    <p>Você está pronta?</p>
+    <button class="cta-button" onclick="finishQuiz()">Sim, quero continuar!</button>
+
+    <script>
+        let currentQuiz = 5; // Quiz atual
+        const totalQuizzes = 5; // Total de quizzes
+        const progressBar = document.getElementById("progress-bar");
+
+        // Atualiza a barra de progresso
+        function updateProgressBar() {
+            const progress = (currentQuiz / totalQuizzes) * 100;
+            progressBar.style.width = progress + "%";
+        }
+
+        // Função que será chamada ao finalizar o quiz
+        function finishQuiz() {
+            // Redireciona para a página inicial
+            window.location.href = 'index.html'; // Redirecionamento para index.html
+        }
+
+        // Atualiza a barra de progresso
+        updateProgressBar();
+    </script>
+</body>
+</html>

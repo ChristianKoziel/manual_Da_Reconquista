@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Gênero</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .progress-bar-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: #555;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 40%; /* Representa 2 de 5 quizzes */
+            background-color: red;
+            transition: width 0.3s;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        img {
+            width: 150px;
+            height: auto;
+            margin: 1rem;
+        }
+
+        .quiz-container {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .quiz-container button {
+            background-color: #00ff00;
+            color: #000;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0.5rem 0;
+            width: 200px;
+        }
+
+        .quiz-container button:hover {
+            background-color: #00cc00;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Impede que o usuário volte para a página anterior
+        if (window.history && window.history.pushState) {
+            window.history.pushState(null, null, window.location.href);
+            window.onpopstate = function () {
+                window.history.pushState(null, null, window.location.href);
+            };
+        }
+    </script>
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div>
+        <img src="src/img/genero.png" alt="Gênero Masculino">
+    </div>
+    <h1>Qual o seu gênero?</h1>
+    <div class="quiz-container">
+        <button style="background-color: pink;" onclick="nextQuiz()">MULHER</button>
+        <button style="background-color: blue;" onclick="nextQuiz()">HOMEM</button>
+        <button style="width: 380px; background-color: grey;" onclick="nextQuiz()">PREFIRO NÃO DIZER</button>
+    </div>
+
+    <script>
+        let currentQuiz = 2; // Quiz atual
+        const totalQuizzes = 5; // Total de quizzes
+        const progressBar = document.getElementById("progress-bar");
+
+        function nextQuiz() {
+            if (currentQuiz < totalQuizzes) {
+                currentQuiz++;
+                const progress = (currentQuiz / totalQuizzes) * 100;
+                progressBar.style.width = progress + "%";
+                // Redireciona para o próximo quiz
+                window.location.href = 'quiz3.html';
+            } else {
+                alert("Você completou o quiz!");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual da Obsessão</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        .progress-bar-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: #555;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 20%; /* Início com 20% (primeiro quiz) */
+            background-color: red;
+            transition: width 0.3s;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h1 span {
+            color: red;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background-color: red;
+            color: #000;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            max-width: 300px;
+            width: 80%;
+        }
+
+        .cta-button:hover {
+            background-color: #00cc00;
+        }
+
+        img {
+            width: 150px;
+            height: auto;
+            margin: 1rem;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+
+            img {
+                width: 120px;
+                margin: 1rem 0;
+            }
+        }
+
+        /* Responsividade para telas muito pequenas, como celulares pequenos */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 1rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 1rem;
+                width: 90%;
+            }
+
+            img {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <img src="src/img/gina3x4.png" alt="Imagem de mulher">
+    <h1>Descubra como deixar ele <span>obcecado</span> por você</h1>
+    <h2>Apenas usando essa <span style="color: red;">FRASE SECRETA</span></h2>
+    <p>Responda este pequeno questionário para saber se está pronta para ter acesso a esse segredo...</p>
+    <p><strong>Levará menos de 1 minuto</strong></p>
+    <button class="cta-button" onclick="nextQuiz()">SIM, VAMOS COMEÇAR!</button>
+
+    <script>
+        // Impede que o usuário volte para a página anterior
+        if (window.history && window.history.pushState) {
+            window.history.pushState(null, null, window.location.href);
+            window.onpopstate = function () {
+                window.history.pushState(null, null, window.location.href);
+            };
+        }
+
+        let currentQuiz = 1; // Quiz atual
+        const totalQuizzes = 5; // Total de quizzes
+        const progressBar = document.getElementById("progress-bar");
+
+        function nextQuiz() {
+            if (currentQuiz < totalQuizzes) {
+                currentQuiz++;
+                const progress = (currentQuiz / totalQuizzes) * 100;
+                progressBar.style.width = progress + "%";
+                // Redireciona para o próximo quiz
+                window.location.href = 'quiz2.html';
+            } else {
+                alert("Você completou o quiz!");
+            }
+        }
+    </script>
+</body>
+</html>
